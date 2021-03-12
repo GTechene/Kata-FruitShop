@@ -27,7 +27,7 @@ namespace FruitShop.Tests
             cashRegister.Add(product);
             var price = cashRegister.Add(product);
 
-            Check.That(price).IsEqualTo(3 * Prices.ApplePrice);
+            Check.That(price).IsEqualTo(4 * Prices.ApplePrice - 100);
         }
 
         [Test]
@@ -109,14 +109,16 @@ namespace FruitShop.Tests
             Check.That(price).IsEqualTo(Prices.BananaPrice);
         }
 
-        //[Test]
-        //public void Accept_Iteration_6()
-        //{
-        //    var cashRegister = new CashRegister();
-        //    var price = cashRegister.Add("Mele, Apples, Apples, Pommes, Apples, Mele, Cerises, Cerises, Bananes");
+        [Test]
+        [Ignore("Check that all previous rules must be kept. And check the validity of the iteration 6 verification")]
+        public void Accept_Iteration_6()
+        {
+            var cashRegister = new CashRegister();
+            var price = cashRegister.Add("Mele, Apples, Apples, Mele");
+            Check.That(price).IsEqualTo(200);
 
-        //    Check.That(price).IsEqualTo(680);
-        //}
+            Check.That(price).IsEqualTo(100);
+        }
 
 
     }
