@@ -34,6 +34,9 @@ namespace FruitShop
                 case "Pommes":
                     currentProductPrice = 100;
                     break;
+                case "Bananes" when _products.Count(x => x == "Bananes") % 2 == 1:
+                    currentProductPrice = 0;
+                    break;
                 case "Bananes":
                     currentProductPrice = 150;
                     break;

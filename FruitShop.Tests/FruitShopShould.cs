@@ -73,5 +73,15 @@ namespace FruitShop.Tests
 
             Check.That(price).IsEqualTo(325);
         }
+
+        [Test]
+        public void Offer_second_bananas()
+        {
+            var cashRegister = new CashRegister();
+            var price = cashRegister.Add("Bananes");
+            price = cashRegister.Add("Bananes");
+
+            Check.That(price).IsEqualTo(150);
+        }
     }
 }
