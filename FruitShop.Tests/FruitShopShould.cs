@@ -23,18 +23,14 @@ namespace FruitShop.Tests
 
             Check.That(price).IsEqualTo(75);
         }
-    }
 
-    public class CashRegister
-    {
-        public int Add(string product)
+        [Test]
+        public void Display_Bananes_Price()
         {
-            if (product == "Pommes")
-            {
-                return 100;
-            }
+            var cashRegister = new CashRegister();
+            var price = cashRegister.Add("Bananes");
 
-            return 75;
+            Check.That(price).IsEqualTo(150);
         }
     }
 }

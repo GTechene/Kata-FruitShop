@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http.Headers;
 
 namespace FruitShop
 {
@@ -6,7 +7,18 @@ namespace FruitShop
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! 2");
+            var cashRegister = new CashRegister();
+            string product;
+            do
+            {
+                Console.WriteLine("Please enter a product name :");
+                product = Console.ReadLine();
+
+                var price = cashRegister.Add(product);
+
+                Console.WriteLine($"{product} -> {price}");
+            }
+            while (!string.IsNullOrEmpty(product));
         }
     }
 }
