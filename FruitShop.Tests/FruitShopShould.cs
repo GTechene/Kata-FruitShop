@@ -24,9 +24,10 @@ namespace FruitShop.Tests
             var cashRegister = new CashRegister();
             cashRegister.Add(product);
             cashRegister.Add(product);
+            cashRegister.Add(product);
             var price = cashRegister.Add(product);
 
-            Check.That(price).IsEqualTo(2 * Prices.ApplePrice);
+            Check.That(price).IsEqualTo(3 * Prices.ApplePrice);
         }
 
         [Test]
@@ -116,5 +117,7 @@ namespace FruitShop.Tests
 
             Check.That(price).IsEqualTo(680);
         }
+
+
     }
 }
