@@ -19,15 +19,24 @@ namespace FruitShop.Tests
 
         [TestCase("Pommes")]
         [TestCase("Apples")]
-        [TestCase("Mele")]
         public void Apply_Discount_On_Apples(string product)
         {
             var cashRegister = new CashRegister();
+            cashRegister.Add(product);
+            cashRegister.Add(product);
             var price = cashRegister.Add(product);
-            price = cashRegister.Add(product);
-            price = cashRegister.Add(product);
 
             Check.That(price).IsEqualTo(2 * Prices.ApplePrice);
+        }
+
+        [Test]
+        public void Apply_Discount_On_Mele()
+        {
+            var cashRegister = new CashRegister();
+            cashRegister.Add("Mele");
+            var price = cashRegister.Add("Mele");
+
+            Check.That(price).IsEqualTo(Prices.ApplePrice);
         }
 
         [Test]  
@@ -97,6 +106,15 @@ namespace FruitShop.Tests
             price = cashRegister.Add("Bananes");
 
             Check.That(price).IsEqualTo(Prices.BananaPrice);
+        }
+
+        [Test]
+        public void Accept_Iteration_5_prime()
+        {
+            var cashRegister = new CashRegister();
+            var price = cashRegister.Add("Mele, Apples, Apples, Pommes, Apples, Mele, Cerises, Cerises, Bananes");
+
+            Check.That(price).IsEqualTo(680);
         }
     }
 }

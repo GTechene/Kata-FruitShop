@@ -41,7 +41,9 @@ namespace FruitShop
             {
                 case "Apples" when AlreadyBoughtThisProductTwice("Apples"):
                 case "Pommes" when AlreadyBoughtThisProductTwice("Pommes"):
-                case "Mele" when AlreadyBoughtThisProductTwice("Mele"):
+                    currentProductPrice = 0;
+                    break;
+                case "Mele" when AlreadyBoughtThisProduct("Mele"):
                     currentProductPrice = 0;
                     break;
                 case "Apples":
