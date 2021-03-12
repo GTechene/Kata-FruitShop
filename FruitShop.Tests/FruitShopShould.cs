@@ -50,7 +50,7 @@ namespace FruitShop.Tests
             var price = cashRegister.Add("Cerises");
             price = cashRegister.Add("Cerises");
 
-            Check.That(price).IsEqualTo(130);
+            Check.That(price).IsEqualTo(120);
         }
 
         [Test]
@@ -62,7 +62,16 @@ namespace FruitShop.Tests
             price = cashRegister.Add("Cerises");
             price = cashRegister.Add("Cerises");
 
-            Check.That(price).IsEqualTo(260);
+            Check.That(price).IsEqualTo(240);
+        }
+
+        [Test]
+        public void Parse_multiple_products_separated_with_a_comma()
+        {
+            var cashRegister = new CashRegister();
+            var price = cashRegister.Add("Pommes, Cerises, Bananes");
+
+            Check.That(price).IsEqualTo(325);
         }
     }
 }
