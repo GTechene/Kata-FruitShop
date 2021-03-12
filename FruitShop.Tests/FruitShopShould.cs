@@ -6,11 +6,12 @@ namespace FruitShop.Tests
 {
     public class FruitShopShould
     {
-        [Test]
-        public void Display_Pommes_Price()
+        [TestCase("Pommes")]
+        [TestCase("Apples")]
+        public void Display_Pommes_Price(string product)
         {
             var cashRegister = new CashRegister();
-            var price = cashRegister.Add("Pommes");
+            var price = cashRegister.Add(product);
 
             Check.That(price).IsEqualTo(100);
         }
@@ -83,5 +84,6 @@ namespace FruitShop.Tests
 
             Check.That(price).IsEqualTo(150);
         }
+
     }
 }
