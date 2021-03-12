@@ -14,7 +14,7 @@ namespace FruitShop.Tests
             var cashRegister = new CashRegister();
             var price = cashRegister.Add(product);
 
-            Check.That(price).IsEqualTo(100);
+            Check.That(price).IsEqualTo(Prices.ApplePrice);
         }
 
         [Test]  
@@ -23,7 +23,7 @@ namespace FruitShop.Tests
             var cashRegister = new CashRegister();
             var price = cashRegister.Add("Cerises");
 
-            Check.That(price).IsEqualTo(75);
+            Check.That(price).IsEqualTo(Prices.CherryPrice);
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace FruitShop.Tests
             var cashRegister = new CashRegister();
             var price = cashRegister.Add("Bananes");
 
-            Check.That(price).IsEqualTo(150);
+            Check.That(price).IsEqualTo(Prices.BananaPrice);
         }
 
         [Test]
@@ -46,7 +46,7 @@ namespace FruitShop.Tests
         }
 
         [Test]
-        public void aPply_Discount_On_Cerises()
+        public void Apply_Discount_On_Cerises()
         {
             var cashRegister = new CashRegister();
             var price = cashRegister.Add("Cerises");
@@ -56,7 +56,7 @@ namespace FruitShop.Tests
         }
 
         [Test]
-        public void aPply_Discount_On_Cerises_With_4()
+        public void Apply_Discount_On_Cerises_With_4()
         {
             var cashRegister = new CashRegister();
             var price = cashRegister.Add("Cerises");
@@ -83,8 +83,7 @@ namespace FruitShop.Tests
             var price = cashRegister.Add("Bananes");
             price = cashRegister.Add("Bananes");
 
-            Check.That(price).IsEqualTo(150);
+            Check.That(price).IsEqualTo(Prices.BananaPrice);
         }
-
     }
 }

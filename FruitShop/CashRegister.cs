@@ -4,12 +4,16 @@ using System.Linq;
 
 namespace FruitShop
 {
+    public class Prices
+    {
+        public const int CherryPrice = 75;
+        public const int BananaPrice = 150;
+        public const int ApplePrice = 100;
+    }
+
     public class CashRegister
     {
-        private const int CherryPrice = 75;
         private const int CherryDiscount = 20;
-        private const int BananaPrice = 150;
-        private const int ApplePrice = 100;
         private int _totalPrice;
         private readonly List<string> _products = new List<string>();
 
@@ -38,19 +42,19 @@ namespace FruitShop
                 case "Apples":
                 case "Pommes":
                 case "Mele":
-                    currentProductPrice = ApplePrice;
+                    currentProductPrice = Prices.ApplePrice;
                     break;
                 case "Bananes" when AlreadyBoughtThisProduct("Bananes"):
                     currentProductPrice = 0;
                     break;
                 case "Bananes":
-                    currentProductPrice = BananaPrice;
+                    currentProductPrice = Prices.BananaPrice;
                     break;
                 case "Cerises" when AlreadyBoughtThisProduct("Cerises"):
-                    currentProductPrice = CherryPrice - CherryDiscount;
+                    currentProductPrice = Prices.CherryPrice - CherryDiscount;
                     break;
                 case "Cerises":
-                    currentProductPrice = CherryPrice;
+                    currentProductPrice = Prices.CherryPrice;
                     break;
             }
 
