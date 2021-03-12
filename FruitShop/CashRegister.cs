@@ -11,28 +11,22 @@ namespace FruitShop
 
         public int Add(string product)
         {
-            int currentProductPrice = 0;
+            var currentProductPrice = 0;
 
-            if (product == "Pommes")
+            switch (product)
             {
-                currentProductPrice = 100;
-            }
-
-            if (product == "Bananes")
-            {
-                currentProductPrice = 150;
-            }
-
-            if (product == "Cerises")
-            {
-                if (_products.Count(x => x == "Cerises") == 1 || _products.Count(x => x == "Cerises") == 3)
-                {
+                case "Pommes":
+                    currentProductPrice = 100;
+                    break;
+                case "Bananes":
+                    currentProductPrice = 150;
+                    break;
+                case "Cerises" when _products.Count(x => x == "Cerises") % 2 == 1:
                     currentProductPrice = 55;
-                }
-                else
-                {
+                    break;
+                case "Cerises":
                     currentProductPrice = 75;
-                }
+                    break;
             }
 
             if (currentProductPrice != 0)
