@@ -109,14 +109,14 @@ namespace FruitShop.Tests
             Check.That(price).IsEqualTo(Prices.BananaPrice);
         }
 
-        [Test]
-        public void Accept_Iteration_5_prime()
-        {
-            var cashRegister = new CashRegister();
-            var price = cashRegister.Add("Mele, Apples, Apples, Pommes, Apples, Mele, Cerises, Cerises, Bananes");
+        //[Test]
+        //public void Accept_Iteration_6()
+        //{
+        //    var cashRegister = new CashRegister();
+        //    var price = cashRegister.Add("Mele, Apples, Apples, Pommes, Apples, Mele, Cerises, Cerises, Bananes");
 
-            Check.That(price).IsEqualTo(680);
-        }
+        //    Check.That(price).IsEqualTo(680);
+        //}
 
 
     }

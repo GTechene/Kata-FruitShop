@@ -39,8 +39,8 @@ namespace FruitShop
 
             switch (product)
             {
-                case "Apples" when AlreadyBoughtThisProductTwice("Apples"):
-                case "Pommes" when AlreadyBoughtThisProductTwice("Pommes"):
+                case "Apples" when AlreadyBoughtThisProductThreeTimes("Apples"):
+                case "Pommes" when AlreadyBoughtThisProductThreeTimes("Pommes"):
                     currentProductPrice = 0;
                     break;
                 case "Mele" when AlreadyBoughtThisProduct("Mele"):
@@ -73,6 +73,11 @@ namespace FruitShop
             _totalPrice += currentProductPrice;
 
             return _totalPrice;
+        }
+
+        private bool AlreadyBoughtThisProductThreeTimes(string product)
+        {
+            return _products.Count(x => x == product) == 3;
         }
 
         private bool AlreadyBoughtThisProductTwice(string product)
