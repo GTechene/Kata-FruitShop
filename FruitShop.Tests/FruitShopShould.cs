@@ -17,6 +17,19 @@ namespace FruitShop.Tests
             Check.That(price).IsEqualTo(Prices.ApplePrice);
         }
 
+        [TestCase("Pommes")]
+        [TestCase("Apples")]
+        [TestCase("Mele")]
+        public void Apply_Discount_On_Apples(string product)
+        {
+            var cashRegister = new CashRegister();
+            var price = cashRegister.Add(product);
+            price = cashRegister.Add(product);
+            price = cashRegister.Add(product);
+
+            Check.That(price).IsEqualTo(2 * Prices.ApplePrice);
+        }
+
         [Test]  
         public void Display_Cerises_Price()
         {
