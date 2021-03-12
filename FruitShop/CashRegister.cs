@@ -6,17 +6,17 @@ namespace FruitShop
 {
     public class CashRegister
     {
-        private int _totalPrice = 0;
-        private List<string> _products = new List<string>();
+        private int _totalPrice;
+        private readonly List<string> _products = new List<string>();
 
         public int Add(string input)
         {
             var products = input.Split(',');
             if (products.Length > 0)
             {
-                foreach (var p in products)
+                foreach (var product in products)
                 {
-                    AddProduct(p.Trim());
+                    AddProduct(product.Trim());
                 }
 
                 return _totalPrice;
@@ -34,13 +34,13 @@ namespace FruitShop
                 case "Pommes":
                     currentProductPrice = 100;
                     break;
-                case "Bananes" when _products.Count(x => x == "Bananes") % 2 == 1:
+                case "Bananes" when AlreadyBoughtThisProduct("Bananes"):
                     currentProductPrice = 0;
                     break;
                 case "Bananes":
                     currentProductPrice = 150;
                     break;
-                case "Cerises" when _products.Count(x => x == "Cerises") % 2 == 1:
+                case "Cerises" when AlreadyBoughtThisProduct("Cerises"):
                     currentProductPrice = 45;
                     break;
                 case "Cerises":
@@ -56,6 +56,11 @@ namespace FruitShop
             _totalPrice += currentProductPrice;
 
             return _totalPrice;
+        }
+
+        private bool AlreadyBoughtThisProduct(string product)
+        {
+            return _products.Count(x => x == product) % 2 == 1;
         }
     }
 }
