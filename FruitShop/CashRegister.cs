@@ -2,19 +2,31 @@
 {
     public class CashRegister
     {
+        private int _totalPrice = 0;
+
         public int Add(string product)
         {
+            int currentProductPrice = 0;
+
+
             if (product == "Pommes")
             {
-                return 100;
+                currentProductPrice = 100;
             }
 
             if (product == "Bananes")
             {
-                return 150;
+                currentProductPrice = 150;
             }
 
-            return 75;
+            if (product == "Cerises")
+            {
+                currentProductPrice = 75;
+            }
+
+            _totalPrice += currentProductPrice;
+
+            return _totalPrice;
         }
     }
 }

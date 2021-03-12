@@ -15,7 +15,7 @@ namespace FruitShop.Tests
             Check.That(price).IsEqualTo(100);
         }
 
-        [Test]
+        [Test]  
         public void Display_Cerises_Price()
         {
             var cashRegister = new CashRegister();
@@ -31,6 +31,16 @@ namespace FruitShop.Tests
             var price = cashRegister.Add("Bananes");
 
             Check.That(price).IsEqualTo(150);
+        }
+
+        [Test]
+        public void Compute_Sum_of_products_when_several_products_are_added()
+        {
+            var cashRegister = new CashRegister();
+            var price = cashRegister.Add("Bananes");
+            price = cashRegister.Add("Cerises");
+
+            Check.That(price).IsEqualTo(225);
         }
     }
 }
