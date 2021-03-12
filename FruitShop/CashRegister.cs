@@ -6,6 +6,10 @@ namespace FruitShop
 {
     public class CashRegister
     {
+        private const int CherryPrice = 75;
+        private const int CherryDiscount = 20;
+        private const int BananaPrice = 150;
+        private const int ApplePrice = 100;
         private int _totalPrice;
         private readonly List<string> _products = new List<string>();
 
@@ -34,19 +38,19 @@ namespace FruitShop
                 case "Apples":
                 case "Pommes":
                 case "Mele":
-                    currentProductPrice = 100;
+                    currentProductPrice = ApplePrice;
                     break;
                 case "Bananes" when AlreadyBoughtThisProduct("Bananes"):
                     currentProductPrice = 0;
                     break;
                 case "Bananes":
-                    currentProductPrice = 150;
+                    currentProductPrice = BananaPrice;
                     break;
                 case "Cerises" when AlreadyBoughtThisProduct("Cerises"):
-                    currentProductPrice = 55;
+                    currentProductPrice = CherryPrice - CherryDiscount;
                     break;
                 case "Cerises":
-                    currentProductPrice = 75;
+                    currentProductPrice = CherryPrice;
                     break;
             }
 
