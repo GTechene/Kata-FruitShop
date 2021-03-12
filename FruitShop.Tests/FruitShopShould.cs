@@ -52,5 +52,17 @@ namespace FruitShop.Tests
 
             Check.That(price).IsEqualTo(130);
         }
+
+        [Test]
+        public void aPply_Discount_On_Cerises_With_4()
+        {
+            var cashRegister = new CashRegister();
+            var price = cashRegister.Add("Cerises");
+            price = cashRegister.Add("Cerises");
+            price = cashRegister.Add("Cerises");
+            price = cashRegister.Add("Cerises");
+
+            Check.That(price).IsEqualTo(260);
+        }
     }
 }
