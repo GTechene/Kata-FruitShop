@@ -33,6 +33,7 @@ namespace FruitShop
             {
                 case "Apples":
                 case "Pommes":
+                case "Mele":
                     currentProductPrice = 100;
                     break;
                 case "Bananes" when AlreadyBoughtThisProduct("Bananes"):
