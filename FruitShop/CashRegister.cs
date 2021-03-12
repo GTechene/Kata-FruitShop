@@ -43,7 +43,7 @@ namespace FruitShop
                     currentProductPrice = 150;
                     break;
                 case "Cerises" when AlreadyBoughtThisProduct("Cerises"):
-                    currentProductPrice = 45;
+                    currentProductPrice = 55;
                     break;
                 case "Cerises":
                     currentProductPrice = 75;
