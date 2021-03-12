@@ -8,6 +8,7 @@ namespace FruitShop.Tests
     {
         [TestCase("Pommes")]
         [TestCase("Apples")]
+        [TestCase("Mele")]
         public void Display_Pommes_Price(string product)
         {
             var cashRegister = new CashRegister();
