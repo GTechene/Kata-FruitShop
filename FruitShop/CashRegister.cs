@@ -31,6 +31,7 @@ namespace FruitShop
 
             switch (product)
             {
+                case "Apples":
                 case "Pommes":
                     currentProductPrice = 100;
                     break;
