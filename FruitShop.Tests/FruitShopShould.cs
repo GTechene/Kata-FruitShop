@@ -52,7 +52,7 @@ namespace FruitShop.Tests
             var price = cashRegister.Add("Cerises");
             price = cashRegister.Add("Cerises");
 
-            Check.That(price).IsEqualTo(120);
+            Check.That(price).IsEqualTo(130);
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace FruitShop.Tests
             price = cashRegister.Add("Cerises");
             price = cashRegister.Add("Cerises");
 
-            Check.That(price).IsEqualTo(240);
+            Check.That(price).IsEqualTo(260);
         }
 
         [Test]
