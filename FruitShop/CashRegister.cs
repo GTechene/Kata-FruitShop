@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+
 
 namespace FruitShop
 {
@@ -23,7 +25,7 @@ namespace FruitShop
 
             if (product == "Cerises")
             {
-                if (_products.Contains("Cerises"))
+                if (_products.Count(x => x == "Cerises") == 1 || _products.Count(x => x == "Cerises") == 3)
                 {
                     currentProductPrice = 55;
                 }
@@ -38,8 +40,6 @@ namespace FruitShop
                 _products.Add(product);
             }
 
-            
-            
             _totalPrice += currentProductPrice;
 
             return _totalPrice;
